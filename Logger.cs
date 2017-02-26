@@ -3,23 +3,23 @@ using System.Windows.Forms;
 
 namespace VTools
 {
+  /// <summary>
+  /// A Windows Form with a DataGridView for displaying any given datasource
+  /// </summary>
+  public partial class Logger : Form
+  {
     /// <summary>
-    /// A Windows Form with a DataGridView for displaying any given datasource
+    /// Initializes the DataGridView with the datasource object
     /// </summary>
-    public partial class Logger : Form
+    /// <param name="o">Any given datasource</param>
+    /// <param name="Title">Any given title toRow display</param>
+    public Logger(object o, String Title)
     {
-        /// <summary>
-        /// Initializes the DataGridView with the datasource object
-        /// </summary>
-        /// <param name="o">Any given datasource</param>
-        /// <param name="Title">Any given title toRow display</param>
-        public Logger(object o, String Title)
-        {
-            InitializeComponent();
+      InitializeComponent();
 
-            DGV.AutoGenerateColumns = true;
-            BS.DataSource = o;
-            this.Text = Title;
-        }
+      DGV.AutoGenerateColumns = true;
+      BS.DataSource = o;
+      this.Text = Title;
     }
+  }
 }
